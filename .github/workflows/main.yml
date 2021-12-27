@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master, dev-binocular
+  workflow_dispatch:
 
 jobs:
   build:
