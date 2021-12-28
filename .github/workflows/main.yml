@@ -18,7 +18,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
         result-encoding: string
         script: |
-          echo "context.repo.repo";
+          echo '${{  context.repo.repo}} ';
           return context.repo.repo;
 
     - name: Sync Github Repos To Gitee 
