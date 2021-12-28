@@ -18,6 +18,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
         result-encoding: string
         script: |
+          echo "context.repo.repo";
           return context.repo.repo;
 
     - name: Sync Github Repos To Gitee 
@@ -42,6 +43,7 @@ jobs:
         #启用后，强制同步，即强制覆盖目的端仓库
         force_update: true 
         #静态同步列表，在此填写需要同步的仓库名称，可填写多个
-        static_list: "binocular-vision" 
+        #static_list: "binocular-vision" 
+        static_list: '${{ steps.info.outputs.result }}'
         #git超时设置，超时后会自动重试git操作
         timeout: '600s'  
