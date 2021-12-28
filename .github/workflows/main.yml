@@ -14,10 +14,10 @@ jobs:
     - name: Sync Github Repos To Gitee 
       uses: Yikun/hub-mirror-action@v1.0 #使用Yikun开发的hub-mirror-action
       with:
-        #src: github/numajinfei #源端账户名
-        #dst: gitee/numajinfei #目的端账户名
-        src: gitee/JadeHu
-        dst: github/numajinfei
+        src: github/numajinfei #源端账户名
+        dst: gitee/JadeHu #目的端账户名
+        #src: gitee/JadeHu
+        #dst: github/numajinfei
         #SSH密钥对中的私钥，即 id_rsa
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
         #Gitee账户的私人令牌
