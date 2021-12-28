@@ -1,1 +1,1 @@
-Github Sync To Gitee with Github Action.
+Github Sync To Gitee Repo with Github Action.
