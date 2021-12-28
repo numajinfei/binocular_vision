@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: Sync Github Repos To Gitee 
-      uses: Yikun/hub-mirror-action@v1.0 #使用Yikun开发的hub-mirror-action
+      uses: Yikun/hub-mirror-action@master #使用Yikun开发的hub-mirror-action
       with:
         src: github/numajinfei #源端账户名
         dst: gitee/JadeHu #目的端账户名
