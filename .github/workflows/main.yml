@@ -21,7 +21,7 @@ jobs:
           return context.repo.repo;
 
     - name: Sync Github Repos To Gitee 
-      uses: Yikun/hub-mirror-action@v1.1
+      uses: Yikun/hub-mirror-action@master
       with:
         src: github/numajinfei 
         dst: gitee/JadeHu 
@@ -34,6 +34,6 @@ jobs:
         clone_style: "ssh" 
         debug: true 
         force_update: true 
-        #static_list: "binocular-vision" 
-        static_list: '${{ steps.info.outputs.result }}'
+        static_list: "binocular-vision" 
+        #static_list: '${{ steps.info.outputs.result }}'
         timeout: '600s'  
