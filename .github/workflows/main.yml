@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
 
+    - name: Get current repository name
+      id: info
+      uses: actions/github-script@v3.1
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        result-encoding: string
+        script: |
+          return context.repo.repo;
+
     - name: Sync Github Repos To Gitee 
       uses: Yikun/hub-mirror-action@v1.1
       with:
