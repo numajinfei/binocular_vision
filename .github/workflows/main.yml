@@ -20,12 +20,12 @@ jobs:
         #dst: github/numajinfei
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
         dst_token:  ${{ secrets.GITEE_TOKEN }} 
-        account_type: user
+        account_type: org
         #使用ssh方式进行clone，也可以使用https
-        clone_style: "ssh" 
+        #clone_style: "ssh" 
         #clone_style: "https"
-        debug: true 
-        force_update: true 
-        static_list: "binocular_vision" 
+        #debug: true 
+        #force_update: true 
+        static_list: "binocular_vision"
         #static_list: '${{ steps.info.outputs.result }}'
-        timeout: '600s'  
+        #timeout: '600s'  
