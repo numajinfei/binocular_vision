@@ -31,8 +31,8 @@ jobs:
         dst_token:  ${{ secrets.GITEE_TOKEN }} 
         account_type: user 
         #使用ssh方式进行clone，也可以使用https
-        #clone_style: "ssh" 
-        clone_style: "https"
+        clone_style: "ssh" 
+        #clone_style: "https"
         debug: true 
         force_update: true 
         static_list: "binocular_vision" 
