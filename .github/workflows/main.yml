@@ -3,23 +3,32 @@ name: Sync Gitee Repos To Github
 on:
   push:
     branches:
-      - master, dev-binocular
+      - master
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-
-    - name: Get current repository name
+    
+    - name: Get repo and time
       id: info
       uses: actions/github-script@v3.1
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
         result-encoding: string
         script: |
+          core.setOutput('time', new Date(Date.now()).toISOString().replace(/[^0-9]/g, ""));
+          core.setOutput('key', `${context.repo.owner}-${context.repo.repo}`);
           return context.repo.repo;
 
+    - name: Cache src repos
+      uses: actions/cache@v2.1.3
+      id: cache
+      with:
+        path: ${{ github.workspace }}/hub-mirror-cache
+        key: ${{ runner.os }}-${{ steps.info.outputs.key }}-cache-${{ steps.info.outputs.time }}
+        restore-keys: ${{ runner.os }}-${{ steps.info.outputs.key }}-cache-
+    
     - name: Sync Github Repos To Gitee 
       uses: Yikun/hub-mirror-action@v1.0
       with:
