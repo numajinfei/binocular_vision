@@ -40,7 +40,7 @@ jobs:
         cache_path: /github/workspace/hub-mirror-cache
         account_type: user
         #使用ssh方式进行clone，也可以使用https
-        clone_style: "ssh" 
+        #clone_style: "ssh" 
         #clone_style: "https"
         #debug: true 
         force_update: true 
