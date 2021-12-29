@@ -26,6 +26,6 @@ jobs:
         #clone_style: "https"
         debug: true 
         force_update: true 
-        #static_list: "binocular_vision" 
-        static_list: '${{ steps.info.outputs.result }}'
+        static_list: "binocular_vision" 
+        #static_list: '${{ steps.info.outputs.result }}'
         timeout: '600s'  
