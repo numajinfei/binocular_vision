@@ -30,7 +30,7 @@ jobs:
         restore-keys: ${{ runner.os }}-${{ steps.info.outputs.key }}-cache-
     
     - name: Sync Github Repos To Gitee 
-      uses: Yikun/hub-mirror-action@master
+      uses: Yikun/hub-mirror-action@mappings
       with:
         src: github/numajinfei 
         dst: gitee/JadeHu 
