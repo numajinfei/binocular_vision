@@ -21,7 +21,7 @@ jobs:
           return context.repo.repo;
 
     - name: Sync Github Repos To Gitee 
-      uses: Yikun/hub-mirror-action@master
+      uses: Yikun/hub-mirror-action@v1.0
       with:
         src: github/numajinfei 
         dst: gitee/JadeHu 
