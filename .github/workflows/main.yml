@@ -32,7 +32,8 @@ jobs:
     - name: Sync Github Repos To Gitee 
       uses: Yikun/hub-mirror-action@master
       with:
-        src: github/numajinfei 
+        #src: github/numajinfei 
+        src: github/JadeHu
         dst: gitee/JadeHu 
         #src: gitee/JadeHu
         #dst: github/numajinfei
