@@ -42,7 +42,7 @@ jobs:
         #使用ssh方式进行clone，也可以使用https
         #clone_style: "ssh" 
         clone_style: "https"
-        #debug: true 
+        debug: true 
         force_update: true 
         static_list: "binocular_vision"
         #static_list: '${{ steps.info.outputs.result }}'
