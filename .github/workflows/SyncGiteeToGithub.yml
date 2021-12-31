@@ -1,0 +1,51 @@
+name: Sync Gitee Repos To Github
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout source code
+      uses: actions/checkout@v1
+
+    - name: Get Time
+      id: get-time
+      run: |
+        echo "::set-output name=date::$(/bin/date -u "+%Y%m%d%H%M%S")"
+      shell: bash
+
+    - name: Cache src repos
+      uses: actions/cache@v2
+      id: cache
+      with:
+        path: ${{ github.workspace }}/hub-mirror-cache
+        key: ${{ runner.os }}-hub-repos-cache-${{ steps.get-time.outputs.date }}
+        restore-keys: ${{ runner.os }}-hub-repos-cache
+    
+    - name: Sync Github Repos To Gitee 
+      uses: Yikun/hub-mirror-action@master
+      with:
+        #src: github/numajinfei 
+        #dst: gitee/JadeHu 
+        src: gitee/JadeHu
+        dst: github/numajinfei
+        #dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
+        #dst_token:  ${{ secrets.GITEE_TOKEN }} 
+        dst_key: ${{ secrets.GH_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GH_TOKEN }} 
+        cache_path: /github/workspace/hub-mirror-cache
+        account_type: user
+        #使用ssh方式进行clone，也可以使用https
+        clone_style: "ssh" 
+        #clone_style: "https"
+        debug: true 
+        force_update: true 
+        static_list: "binocular_vision"
+        #static_list: '${{ steps.info.outputs.result }}'
+        #timeout: '600s'  
