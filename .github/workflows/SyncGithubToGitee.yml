@@ -31,14 +31,14 @@ jobs:
     - name: Sync Github Repos To Gitee 
       uses: Yikun/hub-mirror-action@master
       with:
-        #src: github/numajinfei 
-        #dst: gitee/JadeHu 
-        src: gitee/JadeHu
-        dst: github/numajinfei
-        #dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
-        #dst_token:  ${{ secrets.GITEE_TOKEN }} 
-        dst_key: ${{ secrets.GH_PRIVATE_KEY }}
-        dst_token:  ${{ secrets.GH_TOKEN }} 
+        src: github/numajinfei 
+        dst: gitee/JadeHu 
+        #src: gitee/JadeHu
+        #dst: github/numajinfei
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
+        dst_token:  ${{ secrets.GITEE_TOKEN }} 
+        #dst_key: ${{ secrets.GH_PRIVATE_KEY }}
+        #dst_token:  ${{ secrets.GH_TOKEN }} 
         cache_path: /github/workspace/hub-mirror-cache
         account_type: user
         #使用ssh方式进行clone，也可以使用https
