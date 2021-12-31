@@ -6,14 +6,29 @@ on:
   workflow_dispatch:
     
 jobs:
-  sync:
+  #sync:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: wearerequired/git-mirror-action@master
+  #      env:
+  #        SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+  #      with:
+  #        source-repo: "git@github.com:numajinfei/binocular_vision.git"
+  #        destination-repo: "git@gitee.com:JadeHu/binocular_vision.git"
+  #        #source-repo: "git@github.com:qianzai/mydocs.git"
+  #        #destination-repo: "git@gitee.com:BuZM/mydocs.git"
+          
+  mirror:
     runs-on: ubuntu-latest
     steps:
-      - uses: wearerequired/git-mirror-action@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+      - name: mirror
+        uses: mathisve/git-mirror-action@latest
         with:
-          source-repo: "git@github.com:numajinfei/binocular_vision.git"
-          destination-repo: "git@gitee.com:JadeHu/binocular_vision.git"
-          #source-repo: "git@github.com:qianzai/mydocs.git"
-          #destination-repo: "git@gitee.com:BuZM/mydocs.git"
+          originalURL: https://github.com/numajinfei/binocular_vision.git
+          originalBranch: master
+          mirrorURL: https://gitee.com/JadeHu/binocular_vision.git
+          mirrorBranch: master
+          verbose: true
+          force: true
+          tags: true
+          pat: ${{ secrets.GITEE_TOKEN }}
