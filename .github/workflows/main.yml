@@ -35,8 +35,9 @@ jobs:
         #dst: gitee/JadeHu 
         src: gitee/JadeHu
         dst: github/numajinfei
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
+        #dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} 
         #dst_token:  ${{ secrets.GITEE_TOKEN }} 
+        dst_key: ${{ secrets.GH_PRIVATE_KEY }}
         dst_token:  ${{ secrets.GH_TOKEN }} 
         cache_path: /github/workspace/hub-mirror-cache
         account_type: user
