@@ -24,9 +24,9 @@ jobs:
       - name: mirror
         uses: mathisve/git-mirror-action@latest
         with:
-          originalURL: https://github.com/numajinfei/binocular_vision.git
+          originalURL: git@github.com:numajinfei/binocular_vision.git
           originalBranch: master
-          mirrorURL: https://gitee.com/JadeHu/binocular_vision.git
+          mirrorURL: git@gitee.com:JadeHu/binocular_vision.git
           mirrorBranch: master
           verbose: true
           force: true
