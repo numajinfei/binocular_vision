@@ -13,8 +13,8 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
-          #source-repo: "git@github.com:numajinfei/binocular_vision.git"
-          source-repo: "https://github.com/numajinfei/binocular_vision.git"
+          source-repo: "git@github.com:numajinfei/binocular_vision.git"
+          #source-repo: "https://github.com/numajinfei/binocular_vision.git"
           destination-repo: "git@gitee.com:JadeHu/binocular_vision.git"
           #source-repo: "git@github.com:qianzai/mydocs.git"
           #destination-repo: "git@gitee.com:BuZM/mydocs.git"
