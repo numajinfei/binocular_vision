@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: wearerequired/git-mirror-action@v1
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
           source-repo: "git@github.com:numajinfei/binocular_vision.git"
           destination-repo: "git@gitee.com:JadeHu/binocular_vision.git"
